@@ -10,6 +10,10 @@ Because the starting questions are simple, my goal is to create solutions in C++
 
 # Javascript
 
+Just like the classic FizzBuzz problem, the solution to it is very simple. I would personally use this mostly as a way to make sure I like the setup of what I'm doing, the code compiles, etc. etc.
+
+I use Node to run the main.js file, because its fast an easy.
+
 # Python
 
 # C++

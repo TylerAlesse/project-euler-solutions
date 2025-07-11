@@ -1,0 +1,6 @@
+# GCC/G++ output files
+*.o
+*.out
+
+# Logs
+*.log
