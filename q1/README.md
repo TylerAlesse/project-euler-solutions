@@ -25,3 +25,22 @@ No real change in the concept behind the solution. Just keep count and sum the v
 I ended up taking a dinner break before getting to this one. So I apologize to future me and readers for the oddly long time between commits for the three languages.
 
 I specifically wanted a solution that would use recursion, mainly as practice for being comfortable with recursion. Which works out with this problem due to it being a particularly easy use-case for it.
+
+# Large Value Testing
+
+They spit out different values... cool! (Not good)
+
+```
+n=1000
+
+   Javascript: 233168
+ Python Range: 266333
+Python Truthy: 233168
+          C++: 266333
+```
+
+I figured out fairly quickly that for the Python Range and the C++ implementations, I was duplicating values into the sum. More specifically, numbers that had both 3 and 5 as a common factor. A dumb mistake, but an easy one to spot and fix.
+
+The Python implementation was an easy fix by converting the two series of values into a set, then joining them. The C++ implementation needed to change the function call to include a list of factors to check.
+
+![A screenshot of 3 terminals, each showing the answer to n=1000 as 233168](PreVerify_Output.png "Output from each language, prior to website verification of answer")

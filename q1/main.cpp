@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+#include <list>
+using namespace std;
 
 /**
  ** sum_of_multiples
@@ -10,27 +12,28 @@
  * 
  *  @returns The sum of the natural numbers with the given common factor
  */
-int sum_of_multiples(int start, int end, int factor) {
+int sum_of_multiples(int start, int end, list<int> factors) {
 
     // Exit Condition
     if(start >= end) {
         return 0;
     }
 
-    if(start % factor == 0) {
-        // Found, Continue
-        return start + sum_of_multiples(start + 1, end, factor);
-    } else {
-        // Not Found, Continue
-        return sum_of_multiples(start + 1, end, factor);
+    for(auto factor : factors) {
+        if(start % factor == 0) {
+            // Found, Continue
+            return start + sum_of_multiples(start + 1, end, factors);
+        }
     }
+
+    // Not Found, Continue
+    return sum_of_multiples(start + 1, end, factors);
 }
 
 int main() {
-    int sum_three = sum_of_multiples(1, 10, 3);
-    int sum_five = sum_of_multiples(1, 10, 5);
-    int total_sum = sum_three + sum_five;
-    printf("%d\n", total_sum);
+    list<int> factors = {3, 5};
+    int sum = sum_of_multiples(1, 1000, factors);
+    cout << sum << endl;
 
     return 0;
 }
