@@ -28,16 +28,7 @@ I specifically wanted a solution that would use recursion, mainly as practice fo
 
 # Large Value Testing
 
-They spit out different values... cool! (Not good)
-
-```
-n=1000
-
-   Javascript: 233168
- Python Range: 266333
-Python Truthy: 233168
-          C++: 266333
-```
+On my initial run of them at the same time, with a large N value, they spit out different values... cool! (Not good)
 
 I figured out fairly quickly that for the Python Range and the C++ implementations, I was duplicating values into the sum. More specifically, numbers that had both 3 and 5 as a common factor. A dumb mistake, but an easy one to spot and fix.
 
